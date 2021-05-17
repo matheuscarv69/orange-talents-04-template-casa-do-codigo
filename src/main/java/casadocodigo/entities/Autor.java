@@ -17,6 +17,7 @@ public class Autor {
     @Column(unique = true)
     private String email;
 
+    @Column(length = 400)
     private String descricao;
 
     @Column(nullable = false)
