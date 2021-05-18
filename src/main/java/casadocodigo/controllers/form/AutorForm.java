@@ -27,9 +27,8 @@ public class AutorForm {
         this.descricao = descricao;
     }
 
-    public Autor converter(){
-        Autor autor = new Autor(this.nome, this.email, this.descricao);
-        return autor;
+    public Autor converter() {
+        return new Autor(this.nome, this.email, this.descricao);
     }
 
 }
