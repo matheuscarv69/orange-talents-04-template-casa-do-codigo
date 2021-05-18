@@ -1,25 +1,23 @@
 package casadocodigo.controllers.form;
 
+import casadocodigo.configs.validation.customValidation.email.EmailDuplicado;
 import casadocodigo.entities.Autor;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 
 public class AutorForm {
 
     @NotEmpty
-    @NotNull
     private String nome;
 
     @NotEmpty
-    @NotNull
     @Email
+    @EmailDuplicado
     private String email;
 
     @NotEmpty
-    @NotNull
     @Length(max = 400)
     private String descricao;
 
