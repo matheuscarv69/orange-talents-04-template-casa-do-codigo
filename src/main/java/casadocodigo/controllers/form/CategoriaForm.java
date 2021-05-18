@@ -1,6 +1,6 @@
 package casadocodigo.controllers.form;
 
-import casadocodigo.configs.validation.customValidation.categoria.CategoriaDuplicada;
+import casadocodigo.configs.validation.customValidation.uniqueValue.UniqueValue;
 import casadocodigo.entities.Categoria;
 
 import javax.validation.constraints.NotEmpty;
@@ -8,7 +8,7 @@ import javax.validation.constraints.NotEmpty;
 public class CategoriaForm {
 
     @NotEmpty
-    @CategoriaDuplicada
+    @UniqueValue(domainClass = Categoria.class, fieldName = "nome", message = "{field.validation.category.duplicated}")
     private String nome;
 
     public void setNome(String nome) {

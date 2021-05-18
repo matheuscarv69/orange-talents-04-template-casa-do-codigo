@@ -1,6 +1,6 @@
 package casadocodigo.controllers.form;
 
-import casadocodigo.configs.validation.customValidation.email.EmailDuplicado;
+import casadocodigo.configs.validation.customValidation.uniqueValue.UniqueValue;
 import casadocodigo.entities.Autor;
 import org.hibernate.validator.constraints.Length;
 
@@ -14,7 +14,7 @@ public class AutorForm {
 
     @NotEmpty
     @Email
-    @EmailDuplicado
+    @UniqueValue(domainClass = Autor.class, fieldName = "email", message = "{field.validation.email.duplicated}")
     private String email;
 
     @NotEmpty
